@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dream Bucket List</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1 class="title">
+                    <i class="fas fa-star"></i>
+                    My Dream Bucket List
+                </h1>
+                <p class="subtitle">Turn your dreams into reality, one wish at a time</p>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="add-item-section">
+                <div class="input-group">
+                    <input type="text" id="wishInput" placeholder="What's your next dream?" maxlength="100">
+                    <select id="categorySelect">
+                        <option value="personal">🌟 Personal</option>
+                        <option value="travel">✈️ Travel</option>
+                        <option value="career">💼 Career</option>
+                        <option value="health">💪 Health</option>
+                        <option value="learning">📚 Learning</option>
+                        <option value="adventure">🏔️ Adventure</option>
+                        <option value="creative">🎨 Creative</option>
+                        <option value="relationships">❤️ Relationships</option>
+                    </select>
+                    <button id="addBtn" class="add-btn">
+                        <i class="fas fa-plus"></i>
+                        Add Dream
+                    </button>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All Dreams</button>
+                    <button class="filter-btn" data-filter="pending">Pending</button>
+                    <button class="filter-btn" data-filter="completed">Completed</button>
+                </div>
+                <div class="stats">
+                    <span class="stat">
+                        <i class="fas fa-list"></i>
+                        Total: <span id="totalCount">0</span>
+                    </span>
+                    <span class="stat">
+                        <i class="fas fa-clock"></i>
+                        Pending: <span id="pendingCount">0</span>
+                    </span>
+                    <span class="stat">
+                        <i class="fas fa-check-circle"></i>
+                        Completed: <span id="completedCount">0</span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="wishes-container" id="wishesContainer">
+                <div class="empty-state" id="emptyState">
+                    <div class="empty-icon">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h3>Your bucket list is empty</h3>
+                    <p>Start adding your dreams and watch them come to life!</p>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2024 Dream Bucket List. Made with <i class="fas fa-heart"></i> for dreamers</p>
+        </footer>
+    </div>
+
+    <!-- Edit Modal -->
+    <div class="modal" id="editModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Edit Your Dream</h3>
+                <button class="close-btn" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="editWishInput" placeholder="Update your dream">
+                <select id="editCategorySelect">
+                    <option value="personal">🌟 Personal</option>
+                    <option value="travel">✈️ Travel</option>
+                    <option value="career">💼 Career</option>
+                    <option value="health">💪 Health</option>
+                    <option value="learning">📚 Learning</option>
+                    <option value="adventure">🏔️ Adventure</option>
+                    <option value="creative">🎨 Creative</option>
+                    <option value="relationships">❤️ Relationships</option>
+                </select>
+            </div>
+            <div class="modal-footer">
+                <button id="saveEdit" class="save-btn">Save Changes</button>
+                <button id="cancelEdit" class="cancel-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
